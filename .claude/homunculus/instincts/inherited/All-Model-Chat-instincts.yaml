@@ -1,0 +1,746 @@
+# Instincts generated from https://github.com/lllyyysss77/All-Model-Chat
+# Generated: 2026-06-01T14:49:15.126Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: All-Model-Chat-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, chore, feat, refactor, docs
+
+## Evidence
+
+- 200 commits analyzed
+- Detected conventional commit pattern
+- Examples: chore: bump version to 1.8.14, fix: restore CI checks
+
+---
+id: All-Model-Chat-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Commit Length
+
+## Action
+
+Keep commit messages concise (~38 characters)
+
+## Evidence
+
+- Average commit message length: 38 chars
+- Based on 200 commits
+
+---
+id: All-Model-Chat-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: All-Model-Chat-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: All-Model-Chat-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: All-Model-Chat-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: components, constants, contexts, features, hooks
+
+---
+id: All-Model-Chat-test-colocate
+trigger: "when writing tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Test Colocate
+
+## Action
+
+Place test file next to the source file (e.g., Button.test.tsx next to Button.tsx)
+
+## Evidence
+
+- Colocated test pattern detected
+- Tests live alongside source files
+
+---
+id: All-Model-Chat-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.ts
+
+---
+id: All-Model-Chat-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: All-Model-Chat-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Test Types
+
+## Action
+
+Write unit, integration, e2e tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration, e2e
+- Coverage config: yes
+
+---
+id: All-Model-Chat-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/**/*
+
+---
+id: All-Model-Chat-workflow-add-or-update-settings-option
+trigger: "when doing add or update settings option"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Workflow Add Or Update Settings Option
+
+## Action
+
+Follow the add-or-update-settings-option workflow:
+1. Edit or add files in src/components/settings/sections/ (e.g., AppearanceSection.tsx, ModelsSection.tsx, LiveArtifactsSection.tsx, McpSection.tsx)
+2. Update src/schemas/appSettingsSchema.ts (and .test.ts) to reflect schema changes
+3. Update src/constants/settingsDefaults.ts (and .test.ts) for default values
+4. Edit src/types/settings.ts for type changes
+5. Update src/i18n/translations/settings/*.ts for new/changed labels
+6. Add or update tests in src/components/settings/sections/*.test.tsx
+7. Optionally update src/components/settings/SettingsContent.tsx and/or SettingsModal.tsx
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/components/settings/sections/*.ts(x), src/schemas/appSettingsSchema.ts, src/schemas/appSettingsSchema.test.ts
+
+---
+id: All-Model-Chat-workflow-feature-development-with-tests-and-schema
+trigger: "when doing feature development with tests and schema"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Workflow Feature Development With Tests And Schema
+
+## Action
+
+Follow the feature-development-with-tests-and-schema workflow:
+1. Add or update multiple files in src/components/ (UI), src/features/ (logic), src/hooks/ (logic/UI hooks)
+2. Update or add tests in src/components/*/*.test.tsx, src/features/*/*.test.tsx, or src/hooks/*/*.test.ts(x)
+3. Update or add schema/types in src/schemas/*.ts, src/types/*.ts
+4. Update constants if needed (src/constants/...)
+5. Update i18n files if user-facing text is changed
+6. Optionally update documentation (README.md, etc.)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/components/**/*.{ts,tsx}, src/features/**/*.{ts,tsx}, src/hooks/**/*.{ts,tsx}
+
+---
+id: All-Model-Chat-workflow-version-bump-and-release
+trigger: "when doing version bump and release"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Workflow Version Bump And Release
+
+## Action
+
+Follow the version-bump-and-release workflow:
+1. Update package.json version
+2. Update package-lock.json
+3. Optionally update README.md or other metadata
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: package.json, package-lock.json, README.md
+
+---
+id: All-Model-Chat-workflow-fix-or-enhance-file-upload-or-import
+trigger: "when doing fix or enhance file upload or import"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Workflow Fix Or Enhance File Upload Or Import
+
+## Action
+
+Follow the fix-or-enhance-file-upload-or-import workflow:
+1. Edit src/hooks/file-upload/* (e.g., useFileDragDrop.ts, useFilePreProcessing.ts, useFileUploader.ts, useFileIdAdder.ts, useFilePolling.ts)
+2. Edit src/utils/file-upload/* or src/utils/import-context/* as needed
+3. Update or add tests in src/hooks/file-upload/*.test.tsx, src/utils/import-context/*.test.ts
+4. Optionally update related UI components (e.g., src/components/chat/input/AttachmentMenu.tsx, SelectedFileDisplay.tsx)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/hooks/file-upload/*.ts, src/hooks/file-upload/*.test.tsx, src/utils/file-upload/*.ts
+
+---
+id: All-Model-Chat-workflow-refactor-or-reorganize-app-structure
+trigger: "when doing refactor or reorganize app structure"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Workflow Refactor Or Reorganize App Structure
+
+## Action
+
+Follow the refactor-or-reorganize-app-structure workflow:
+1. Edit a large number of files across src/components/, src/features/, src/hooks/, src/utils/, src/constants/, etc.
+2. Update or add tests to reflect new structure
+3. Update types and schemas if necessary
+4. Update documentation if structure/naming changes are user-facing
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: src/components/**/*.{ts,tsx}, src/features/**/*.{ts,tsx}, src/hooks/**/*.{ts,tsx}
+
+---
+id: All-Model-Chat-workflow-add-or-update-model-support
+trigger: "when doing add or update model support"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Workflow Add Or Update Model Support
+
+## Action
+
+Follow the add-or-update-model-support workflow:
+1. Edit src/constants/modelConstants.ts, modelRegistry.ts, settingsModelOptions.test.ts
+2. Edit src/utils/modelCatalog.ts, modelCapabilities.ts, modelSorting.ts, modelSwitchSettings.ts (and their .test.ts)
+3. Edit src/components/settings/sections/ModelsSection.tsx (and .test.tsx)
+4. Update src/types/settings.ts if needed
+5. Update i18n if user-facing model names change
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/constants/modelConstants.ts, src/constants/modelRegistry.ts, src/constants/settingsModelOptions.test.ts
+
+---
+id: all-model-chat-instinct-file-naming
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct File Naming
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in src/components/historySidebar.searchShortcut.test.tsx
+- Pattern in src/components/sidebar/CollapsedRecentChatsButton.tsx
+
+---
+id: all-model-chat-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in src/hooks/useFileDragDrop.ts
+- Pattern in src/features/chat/useChatState.ts
+
+---
+id: all-model-chat-instinct-class-naming
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in src/components/sidebar/CollapsedRecentChatsButton.tsx
+- Pattern in src/components/settings/SettingsModal.tsx
+
+---
+id: all-model-chat-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in src/constants/settingsDefaults.ts
+- Pattern in src/constants/modelConstants.ts
+
+---
+id: all-model-chat-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in src/components/sidebar/SidebarActions.tsx
+- Pattern in src/hooks/useFileUploader.ts
+
+---
+id: all-model-chat-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Export Style
+
+## Action
+
+Use mixed export style (default and named exports as appropriate)
+
+## Evidence
+
+- Pattern in src/components/settings/SettingsContent.tsx
+- Pattern in src/features/chat/useChatState.ts
+
+---
+id: all-model-chat-instinct-test-file-pattern
+trigger: "When writing a test file"
+confidence: 0.95
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Test File Pattern
+
+## Action
+
+Name test files with the pattern *.test.ts or *.test.tsx
+
+## Evidence
+
+- Pattern in src/components/sidebar/HistorySidebar.searchShortcut.test.tsx
+- Pattern in src/schemas/appSettingsSchema.test.ts
+
+---
+id: all-model-chat-instinct-test-location
+trigger: "When adding tests for a module"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Test Location
+
+## Action
+
+Colocate test files next to the implementation
+
+## Evidence
+
+- Pattern in src/components/sidebar/SidebarHeader.test.tsx
+- Pattern in src/components/settings/sections/ModelsSection.test.tsx
+
+---
+id: all-model-chat-instinct-test-framework
+trigger: "When writing or configuring tests"
+confidence: 0.95
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Test Framework
+
+## Action
+
+Use Vitest as the testing framework
+
+## Evidence
+
+- Pattern in vitest.config.ts
+- Pattern in package.json dependencies
+
+---
+id: all-model-chat-instinct-test-coverage
+trigger: "When configuring or running tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Test Coverage
+
+## Action
+
+Enable and check code coverage
+
+## Evidence
+
+- Pattern in vitest.config.ts
+- Pattern in coverageConfig: true
+
+---
+id: all-model-chat-instinct-commit-format
+trigger: "When writing a commit message"
+confidence: 0.95
+domain: git
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Commit Format
+
+## Action
+
+Use conventional commit prefixes (fix, chore, feat, refactor, docs, style, ci)
+
+## Evidence
+
+- Seen in commit 'fix: restore CI checks'
+- Seen in commit 'chore: bump version to 1.8.14'
+
+---
+id: all-model-chat-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Commit Length
+
+## Action
+
+Keep commit messages concise (average ~38 characters)
+
+## Evidence
+
+- Pattern in commit examples
+- Average commit message length: 38
+
+---
+id: all-model-chat-instinct-add-or-update-settings-option
+trigger: "When someone wants to add a new setting or modify an existing one in the app's settings UI"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Add Or Update Settings Option
+
+## Action
+
+Edit/add settings section, update schema, defaults, types, i18n, and tests as per workflow
+
+## Evidence
+
+- Workflow: add-or-update-settings-option
+- Pattern in src/components/settings/sections/AppearanceSection.tsx
+
+---
+id: all-model-chat-instinct-feature-development-with-tests-and-schema
+trigger: "When someone wants to add a new feature or make a substantial change that affects multiple layers (UI, logic, schema, tests)"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Feature Development With Tests And Schema
+
+## Action
+
+Update components, features, hooks, tests, schemas/types, constants, i18n, and docs as per workflow
+
+## Evidence
+
+- Workflow: feature-development-with-tests-and-schema
+- Pattern in src/features/chat/useChatState.ts
+
+---
+id: all-model-chat-instinct-version-bump-and-release
+trigger: "When someone wants to release a new version or update dependencies"
+confidence: 1
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Version Bump And Release
+
+## Action
+
+Update package.json version, package-lock.json, and optionally README.md
+
+## Evidence
+
+- Workflow: version-bump-and-release
+- Seen in commit 'chore: bump version to 1.8.14'
+
+---
+id: all-model-chat-instinct-fix-or-enhance-file-upload-or-import
+trigger: "When someone wants to fix bugs or add features to file upload/import mechanisms"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Fix Or Enhance File Upload Or Import
+
+## Action
+
+Edit file-upload hooks/utils, update/add tests, and optionally update related UI components
+
+## Evidence
+
+- Workflow: fix-or-enhance-file-upload-or-import
+- Pattern in src/hooks/file-upload/useFileUploader.ts
+
+---
+id: all-model-chat-instinct-refactor-or-reorganize-app-structure
+trigger: "When someone wants to improve code structure, naming, or modularity across many files"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Refactor Or Reorganize App Structure
+
+## Action
+
+Edit many files across components/features/hooks/utils/constants, update tests, types/schemas, and docs as needed
+
+## Evidence
+
+- Workflow: refactor-or-reorganize-app-structure
+- Seen in commit 'refactor: reorganize app modules'
+
+---
+id: all-model-chat-instinct-add-or-update-model-support
+trigger: "When someone wants to add a new model or update model metadata/behavior"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/All-Model-Chat
+---
+
+# All Model Chat Instinct Add Or Update Model Support
+
+## Action
+
+Edit model constants, registry, utils, tests, settings section, types, and i18n as per workflow
+
+## Evidence
+
+- Workflow: add-or-update-model-support
+- Pattern in src/constants/modelConstants.ts
+
